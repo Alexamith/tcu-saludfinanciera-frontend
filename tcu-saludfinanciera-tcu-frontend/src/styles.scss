@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+*{
+
+    background-color: #FFFFFF !important;
+}
+
+body{
+    color: #2A4B9E;
+}
+
+h1, li>a{
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Righteous', sans-serif;
+}
+.h1-center{
+    text-align: center;
+}
+h1{
+    font-weight: bold;
+}
+// li>a{
+//     font-family: 'Josefin Sans', sans-serif;
+//     font-family: 'Nunito', sans-serif;
+//     font-family: 'Nunito Sans', sans-serif;
+//     font-family: 'Righteous', sans-serif;
+// }
