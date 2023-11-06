@@ -1,0 +1,47 @@
+.register-container {
+    width: 500px;
+    margin: 1rem auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        font-weight: bold;
+      }
+  
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+    
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: #007BFF;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+  
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
