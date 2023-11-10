@@ -22,13 +22,9 @@ import { InformationVideoComponent } from './components/information-video/inform
     IndexComponent,
     PurposeComponent,
     FooterComponent,
-<<<<<<< HEAD
     LoginComponent,
-    RegisterComponent
-=======
-    InformationVideoComponent,
-    LoginComponent
->>>>>>> main
+    RegisterComponent,
+    InformationVideoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,12 +33,8 @@ import { InformationVideoComponent } from './components/information-video/inform
     //Routes
     RouterModule.forRoot([
       {path: '', component: IndexComponent},
-<<<<<<< HEAD
       {path: 'login', component:LoginComponent},
       {path: 'register', component:RegisterComponent}
-=======
-      {path: 'login', component: LoginComponent}
->>>>>>> main
     ]),
   ],
   exports: [RouterModule],
