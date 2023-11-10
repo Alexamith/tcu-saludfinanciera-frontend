@@ -1,16 +1,21 @@
 nav{
    border-bottom: 4px solid  #2A4B9E;
    background-color: #FFFFFF !important;
+
+   background-color: #2A4B9E !important;
    padding: 25px 25px;
   
 }
 
 a{
-
-    color: #2A4B9E !important;
+    color: #FFFFFF !important;
     font-size: larger;
 }
 
+.dropdown-item {
+    
+    color: black !important;
+}
 a:hover{
 
     color: #FF6F3D !important;

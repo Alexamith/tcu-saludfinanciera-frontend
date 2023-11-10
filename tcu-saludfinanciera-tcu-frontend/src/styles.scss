@@ -2,7 +2,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 *{
 
-    background-color: #FFFFFF !important;
+    // background-color: #FFFFFF !important;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Righteous', sans-serif;
 }
 
 body{
@@ -10,10 +14,6 @@ body{
 }
 
 h1, li>a{
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Nunito', sans-serif;
-    font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Righteous', sans-serif;
 }
 .h1-center{
     text-align: center;
