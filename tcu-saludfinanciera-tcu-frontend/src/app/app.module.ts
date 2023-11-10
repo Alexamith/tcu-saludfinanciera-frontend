@@ -8,6 +8,8 @@ import { PresentationComponent } from './components/presentation/presentation.co
 import { IndexComponent } from './components/index/index.component';
 import { PurposeComponent } from './components/purpose/purpose.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { InformationVideoComponent } from './components/information-video/information-video.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { FooterComponent } from './components/footer/footer.component';
     PresentationComponent,
     IndexComponent,
     PurposeComponent,
-    FooterComponent
+    FooterComponent,
+    InformationVideoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component: IndexComponent}
+      {path: '', component: IndexComponent},
+      {path: 'login', component: LoginComponent}
     ]),
   ],
   exports: [RouterModule],
