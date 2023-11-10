@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { InformationVideoComponent } from './components/information-video/information-video.component';
 
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,7 @@ import { InformationVideoComponent } from './components/information-video/inform
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     //Routes
