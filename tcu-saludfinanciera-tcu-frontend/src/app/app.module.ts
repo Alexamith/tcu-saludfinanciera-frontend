@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+
 import { IndexComponent } from './components/index/index.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -9,14 +15,10 @@ import { PurposeComponent } from './components/purpose/purpose.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-
 import { InformationVideoComponent } from './components/information-video/information-video.component';
 
-
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './guards/auth.guard';
+import { TokenInterceptorService } from './services/auth/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -36,15 +38,17 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     //Routes
-    RouterModule.forRoot([
-      {path: '', component: LoginComponent},
-      {path: 'login', component:LoginComponent},
-      {path: 'register', component:RegisterComponent}
-    ]),
-    AppRoutingModule,
+    AppRoutingModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
