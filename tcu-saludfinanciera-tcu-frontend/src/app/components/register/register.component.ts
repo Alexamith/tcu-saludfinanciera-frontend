@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,36 +6,45 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  nameInvalid: boolean = false;
+  emailInvalid: boolean = false;
+  passwordInvalid: boolean = false;
+  errorMessage: string;
+  message: string;
 
-  constructor(private fb: FormBuilder) {//Required
-    this.registerForm = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido1: ['', Validators.required],
-      apellido2: ['', Validators.required],
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.initializeForm();
+  }
+
+  initializeForm() {
+    this.registerForm = this.formBuilder.group({
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      telefono: [
-        '',
-        [Validators.required, Validators.pattern(/^\d{8}$/)] // Only 8 numeric digits
-      ]
+      password: ['', Validators.required]
     });
   }
 
-  onPhoneInput(event: any) {
-    const input = event.target;
-    input.value = input.value.replace(/[^0-9]/g, ''); // Only letters
-  }
-
-  onTextInput(event: any) {
-    const input = event.target;
-    input.value = input.value.replace(/[^a-zA-Z]/g, ''); // Solo letras
-  }
-
-  onSubmit() {
-    if (this.registerForm.valid) {
-      // Aquí puedes enviar los datos del formulario al servidor o realizar otras acciones
+  register() {
+    const nameControl = this.registerForm.get('name');
+    const emailControl = this.registerForm.get('email');
+    const passwordControl = this.registerForm.get('password');
+  
+    this.nameInvalid = nameControl ? nameControl.invalid : true;
+    this.emailInvalid = emailControl ? emailControl.invalid : true;
+    this.passwordInvalid = passwordControl ? passwordControl.invalid : true;
+  
+    if (this.nameInvalid || this.emailInvalid || this.passwordInvalid) {
+      this.errorMessage = 'Por favor, complete todos los campos correctamente.';
+      return;
     }
+  
+    // Lógica para el registro, por ejemplo, llamada a un servicio de registro
+  
+    this.message = '¡Registro exitoso!';
   }
+  
 }

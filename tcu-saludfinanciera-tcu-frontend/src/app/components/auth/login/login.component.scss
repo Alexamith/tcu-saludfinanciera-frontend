@@ -4,30 +4,36 @@ label{
   font-weight: bold;
 }
 button{
-  color: #2A4B9E;
+  color:#2A4B9E;
+  border: 1px solid #2A4B9E;
   width: 100%;
 }
 button:hover{
-  color:#2A4B9E;
-  background-color: black;
-  font-weight: bold;
-  border: 1px solid #2A4B9E;
+  background-color:#2A4B9E;
+  color: #ffffff;
 }
 
-.inicio-ses{
+.inicio-ses-label{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem;
+  border-bottom: 1px solid #c9c9c9;
 }
 
 .card{
-  border: empty;
+  border-radius: 1rem;
 }
 
 .forget{
   color: #2A4B9E!important;
+  margin-left: 65%;
+  font-size: small;
 }
 
 p{
   color: #2A4B9E;
+}
+
+.register-btn{
+  margin-left: 1%;
 }
