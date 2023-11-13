@@ -3,9 +3,9 @@
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
-          <div class="row g-0">
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
+          <div class="row g-0 ">
+            <div class="col-md-6 col-lg-7 d-flex align-items-center ">
+              <div class="card-body p-4 p-lg-5 text-black ">
                 <form [formGroup]="registerForm" (ngSubmit)="register();">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -42,7 +42,7 @@
                   <div class="form-outline mb-4">
                     <label class="form-label" for="password-label">Contraseña</label>
                     <input type="password" class="form-control form-control-lg" formControlName="password" [class.is-invalid]="passwordInvalid">
-                    <small *ngIf="passwordInvalid" class="text-danger" role="alert">La contraseña debe tener al menos 8 caracteres y contener al menos un símbolo</small>
+                    <small *ngIf="passwordInvalid" class="text-danger" style="font-size: small;" role="alert">La contraseña debe tener al menos 8 caracteres y contener al menos un símbolo</small>
                   </div>
 
                   <div class="as pt-1 mb-4">
@@ -57,10 +57,10 @@
                 </form>
               </div>
             </div>
-            <div class="col-md-6 col-lg-5 d-none d-md-block"  >
+            <div class="col-md-6 col-lg-5 d-none d-md-block "  >
               <img  src="https://images.pexels.com/photos/6801680/pexels-photo-6801680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="register form" class="w-100"
-                style="border-radius: 1rem; height: 100%; object-fit: cover;" />
+                style="border-radius:  0 1rem 1rem 0 ; height: 100%; object-fit: cover;" />
             </div>
           </div>
           
