@@ -16,6 +16,7 @@ import { InformationVideoComponent } from './components/information-video/inform
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -36,10 +37,11 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     //Routes
     RouterModule.forRoot([
-      {path: '', component: IndexComponent},
+      {path: '', component: LoginComponent},
       {path: 'login', component:LoginComponent},
       {path: 'register', component:RegisterComponent}
     ]),
+    AppRoutingModule,
   ],
   exports: [RouterModule],
   providers: [],
