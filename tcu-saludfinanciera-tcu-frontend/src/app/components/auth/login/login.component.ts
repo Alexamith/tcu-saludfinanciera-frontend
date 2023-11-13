@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     this.createloginForm();
   }
 
-  get identificationInvalid(){
-    return this.loginForm.get('identification')!.invalid && this.loginForm.get('identification')?.touched;
+  get emailInvalid(){
+    return this.loginForm.get('email')!.invalid && this.loginForm.get('email')?.touched;
   }
 
 
@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
 
     this.loginForm = this.fb.group({
 
-      identification:['', [Validators.required]],
+      email:['', [Validators.required]],
       password:['', [Validators.required]],
-      companyId:['', [Validators.required]],
+      companyId:['1', [Validators.required]],
     });
 
   }
@@ -42,6 +42,13 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginPayload = this.loginForm.value;
     this.authService.login(this.loginPayload).subscribe((res:any) => {
+      this.message = res!.msg;
+      if (!res!.ok) {
+        this.errorMessage = true;
+        return;
+      }
+
+
       this.tokenService.saveUserLocalStorage(res.data);
       this.errorMessage = false;
       this.router.navigateByUrl('/');
