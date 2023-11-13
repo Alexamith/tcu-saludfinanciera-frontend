@@ -24,11 +24,13 @@
                   <div class="form-outline mb-4 id-input">
                     <label class="form-label" for="id-label">Correo electrónico</label>
                     <input class="form-control form-control-lg" type="text" 
-                      formControlName="identification" [class.is-invalid]="identificationInvalid">
-                    <small *ngIf="identificationInvalid" class="text-danger" role="alert" style="position: absolute;">
+                      formControlName="email" [class.is-invalid]="emailInvalid">
+                    <small *ngIf="emailInvalid" class="text-danger" role="alert" style="position: absolute;">
                       El campo es requerido
                     </small>
                   </div>
+
+                  
 
                   <div class="form-outline mb-4 password-input">
                     <label class="form-label" for="psw-label">Contraseña</label>
@@ -36,7 +38,11 @@
                       formControlName="password" />
                     <a class="small text-muted forget" href="#!">¿Olvidó la contraseña?</a>
                   </div>
-
+                  <div class="col-md-12 mb-3" *ngIf="errorMessage">
+                    <div class="alert alert-danger" role="alert">
+                      {{message}}
+                    </div>
+                  </div>
                   <div class="as pt-1 mb-4">
                     <button class="btn btn-lg btn-block" type="submit">Ingresar</button>
                   </div>
@@ -44,11 +50,7 @@
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">¿No tienes cuenta?<a href="#!"
                       style="color: #393f81; margin-left: 0.5rem;">Registrate aquí </a></p>
 
-                  <div class="col-md-12 mb-3" *ngIf="errorMessage">
-                    <div class="alert alert-danger" role="alert" style="position: absolute;">
-                      {{message}}
-                    </div>
-                  </div>
+
                 </form>
 
               </div>
