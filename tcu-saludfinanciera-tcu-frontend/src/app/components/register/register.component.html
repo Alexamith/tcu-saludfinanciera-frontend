@@ -9,32 +9,25 @@
                 <form [formGroup]="registerForm" (ngSubmit)="register();">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                    <label class="h1 fw-bold inicio-ses-label">Registro</label>
+                    <label class="h1 fw-bold reg-label">Registro</label>
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="name-label">Nombre</label>
-                    <input class="form-control form-control-lg" type="text" formControlName="name"
-                      [class.is-invalid]="nameInvalid">
-                    <small *ngIf="nameInvalid" class="text-danger" role="alert">
-                      El campo es requerido
-                    </small>
+                    <input class="form-control form-control-lg" type="text" formControlName="name" pattern="[a-zA-Z ]*" [class.is-invalid]="nameInvalid">
+                    <small *ngIf="nameInvalid" class="text-danger" role="alert">El campo es requerido y solo debe contener letras</small>
                   </div>
+                  
                   <div class="form-outline mb-4">
                     <label class="form-label" for="name-label">Primer apellido</label>
-                    <input class="form-control form-control-lg" type="text" formControlName="name"
-                      [class.is-invalid]="nameInvalid">
-                    <small *ngIf="nameInvalid" class="text-danger" role="alert">
-                      El campo es requerido
-                    </small>
+                    <input class="form-control form-control-lg" type="text" formControlName="firstLastName" pattern="[a-zA-Z ]*" [class.is-invalid]="firstLastNameInvalid">
+                    <small *ngIf="firstLastNameInvalid" class="text-danger" role="alert">El campo es requerido y solo debe contener letras</small>
                   </div>
+                  
                   <div class="form-outline mb-4">
                     <label class="form-label" for="name-label">Segundo apellido</label>
-                    <input class="form-control form-control-lg" type="text" formControlName="name"
-                      [class.is-invalid]="nameInvalid">
-                    <small *ngIf="nameInvalid" class="text-danger" role="alert">
-                      El campo es requerido
-                    </small>
+                    <input class="form-control form-control-lg" type="text" formControlName="secondLastName" pattern="[a-zA-Z ]*" [class.is-invalid]="secondLastNameInvalid">
+                    <small *ngIf="secondLastNameInvalid" class="text-danger" role="alert">El campo es requerido y solo debe contener letras</small>
                   </div>
 
                   <div class="form-outline mb-4">
@@ -48,15 +41,12 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="password-label">Contraseña</label>
-                    <input type="password" class="form-control form-control-lg" formControlName="password"
-                      [class.is-invalid]="passwordInvalid">
-                    <small *ngIf="passwordInvalid" class="text-danger" role="alert">
-                      La contraseña es requerida
-                    </small>
+                    <input type="password" class="form-control form-control-lg" formControlName="password" [class.is-invalid]="passwordInvalid">
+                    <small *ngIf="passwordInvalid" class="text-danger" role="alert">La contraseña debe tener al menos 8 caracteres y contener al menos un símbolo</small>
                   </div>
 
                   <div class="as pt-1 mb-4">
-                    <button class="btn btn-lg btn-block" type="submit">Registrar</button>
+                    <button class="btn btn-lg btn-block" type="submit">Registrarse</button>
                   </div>
 
                   <div class="col-md-12 mb-3" *ngIf="errorMessage">

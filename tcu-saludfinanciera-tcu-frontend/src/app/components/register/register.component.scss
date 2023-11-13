@@ -1,4 +1,35 @@
 .register-sect{
   height: 54.5rem;
 
+  .reg-label{
+    margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #c9c9c9;
+  }
+  label{
+    font-weight: bold;
+    color: #2A4B9E;
+  }
+  button{
+    background-color:#2A4B9E;
+    color: #ffffff;
+    border: 1px solid #2A4B9E;
+    width: 50%;
+  }
+  button:hover{
+    background-color: #ffffff;
+    color: #2A4B9E;
+  }
+  small{
+    position: absolute;
+  }
+  
+  .alert{
+    position: absolute;
+    height: 2rem;
+  }
 }
+
+
+
