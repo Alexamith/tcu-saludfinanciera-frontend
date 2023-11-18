@@ -1,35 +1,96 @@
-.register-sect{
-  height: 54.5rem;
+.register-sect {
+  height: 56.8rem;
 
-  .reg-label{
-    margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #c9c9c9;
+  .reg-label {
+    margin: -0 auto auto -1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #c9c9c9;
   }
-  label{
+
+  label {
     font-weight: bold;
     color: #2A4B9E;
   }
-  button{
-    background-color:#2A4B9E;
+
+  button {
+
+    background-color: #2A4B9E;
     color: #ffffff;
     border: 1px solid #2A4B9E;
     width: 50%;
   }
-  button:hover{
+
+  button:hover {
     background-color: #ffffff;
     color: #2A4B9E;
   }
-  small{
+
+  small {
     position: absolute;
   }
-  
-  .alert{
-    position: absolute;
-    height: 2rem;
+
+  .alert-box {
+    position: static;
+
+    .alert {
+      padding: 0 -3rem 0 -1rem;
+      font-size: small;
+      margin-top: -0.9rem;
+      margin-bottom: -2.3rem;
+      margin-right: 1%;
+    }
+  }
+
+}
+
+.success-message {
+  background-color: #4caf50;
+  /* Color de fondo verde */
+  color: #fff;
+  /* Color del texto blanco */
+  padding: 15px;
+  /* Relleno interno */
+  text-align: center;
+  /* Texto centrado */
+  margin-top: 20px;
+  /* Margen superior para separar del resto del contenido */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  display: none;
+  /* Oculto inicialmente */
+}
+
+/* Agrega estilos de animación si lo deseas */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
+.success-message.show {
+  display: block;
+  animation: fadeInOut 4s ease;
+}
 
+@media screen and (max-width: 990px) {
+  .alert-box {
+    margin-bottom: 2rem;
+  }
 
+  label {
+    margin-top: 3%;
+  }
+
+  small {
+    font-size: small !important;
+  }
+
+}
