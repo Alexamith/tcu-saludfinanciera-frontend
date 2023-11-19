@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  api:'http://localhost:4000/api/'
-  // api:'https://tcu-salud-financiera-backend.onrender.com/api/'
+  // api:'http://localhost:4000/api/'
+  api:'https://tcu-salud-financiera-backend.onrender.com/api/'
   
 };
 
