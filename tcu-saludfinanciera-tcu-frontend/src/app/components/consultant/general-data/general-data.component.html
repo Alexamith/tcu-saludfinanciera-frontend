@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row" >
+    <div class="col-md-12 mt-5 mb-3 text-center" >
+      <h1>Información personal</h1>
+    </div>
+  </div>
+  <form [formGroup]="registerForm" >
+                          <div class="d-flex align-items-center mb-3 pb-1">
+                            <i class="fas fa-cubes fa-2x me-3"></i>
+                            <!-- <label class="h1 fw-bold reg-label">Consultante</label> -->
+                          </div>
+        
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Nombre Completo</label>
+                            <input class="form-control form-control-lg" type="text" formControlName="fullName"
+                             >
+                            <!-- <input class="form-control form-control-lg" type="text" formControlName="fullName"
+                              [class.is-invalid]="nameInvalid"> -->
+                            <!-- <small *ngIf="nameInvalid" class="text-danger" role="alert">El campo es requerido y solo debe
+                              contener letras</small> -->
+                          </div>
+        
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Cédula</label>
+                            <input class="form-control form-control-lg" type="text" formControlName="identification"
+                             >
+                            <!-- <input class="form-control form-control-lg" type="text" formControlName="identification"
+                             [class.is-invalid]="firstLastNameInvalid"> -->
+                            <!-- <small *ngIf="firstLastNameInvalid" class="text-danger" role="alert">El campo es requerido y solo
+                              debe contener letras</small> -->
+                          </div>
+        
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Fecha nacimientno</label>
+                            <input class="form-control form-control-lg" type="date" formControlName="birthdate"
+                             >
+                            <!-- <input class="form-control form-control-lg" type="text" formControlName="birthdate"
+                             [class.is-invalid]="secondLastNameInvalid"> -->
+                            <!-- <small *ngIf="secondLastNameInvalid" class="text-danger" role="alert">El campo es requerido y solo
+                              debe contener letras</small> -->
+                          </div>
+        
+                          <div class="form-outline mb-4">
+                            <label class="form-label" >Edad</label>
+                            <input class="form-control form-control-lg" type="number" formControlName="age"
+      >
+                            <!-- <small *ngIf="textInvalid" class="text-danger pt" role="alert">El campo es requerido y debe ser un
+                              correo válido</small> -->
+                          </div>
+        
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Sexo</label>
+                            <select class="form-select" formControlName="sex">
+                              <option value="Hombre">Hombre</option>
+                              <option value="Mujer">Mujer</option>
+                            </select>
+                            <!-- <input type="text" class="form-control form-control-lg" formControlName="sex" -->
+                              
+                            <!-- <small *ngIf="textInvalid" class="text-danger psw-msg" role="alert">Debe tener almenos 8
+                              caracteres y un símbolo</small> -->
+                          </div>
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Estado civil 
+                          </label>
+                          <select class="form-select" formControlName="civilStatus">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Viudo">Viudo</option>
+                          </select>
+                            <!-- <input type="text" class="form-control form-control-lg" formControlName="civilStatus"
+                              > -->
+                            <!-- <small *ngIf="textInvalid" class="text-danger psw-msg" role="alert">Debe tener almenos 8
+                              caracteres y un símbolo</small> -->
+                          </div>
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Nacionalidad </label>
+                            <input type="text" class="form-control form-control-lg" formControlName="nationality"
+                              >
+                            <!-- <small *ngIf="textInvalid" class="text-danger psw-msg" role="alert">Debe tener almenos 8
+                              caracteres y un símbolo</small> -->
+                          </div>
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Condición laboral  </label>
+                            <input type="text" class="form-control form-control-lg" formControlName="workingCondition"
+                              >
+                            <!-- <small *ngIf="textInvalid" class="text-danger psw-msg" role="alert">Debe tener almenos 8
+                              caracteres y un símbolo</small> -->
+                          </div>
+                          <div class="form-outline mb-4">
+                            <label class="form-label">Grado académico</label>
+                            <select class="form-select" formControlName="academicDegree">
+                              <option value="Primaria">Primaria</option>
+                              <option value="Secundaria">Secundaria</option>
+                              <option value="Universitaria">Universitaria</option>
+                            </select>
+                            <!-- <input type="text" class="form-control form-control-lg" formControlName="academicDegree"
+                              > -->
+                            <!-- <small *ngIf="textInvalid" class="text-danger psw-msg" role="alert">Debe tener almenos 8
+                              caracteres y un símbolo</small> -->
+                          </div>
+        
+                          <div class="as pt-1 mb-4">
+                            <button class="btn btn-primary btn-lg btn-block" type="button" (click)="createConsultant();">Guardar y continuar</button>
+                          </div>
+        
+                          <!-- <div class="alert-box col-md-12" *ngIf="errorMessage">
+                            <div class="alert alert-danger" role="alert">
+                              {{message}}
+                            </div>
+                          </div>
+                          <div *ngIf="successMessage" class="success-message">
+                            ¡Registro exitoso! Redirigiendo...
+                          </div> -->
+                        </form>
+
+</div>
+
+                      <app-spinner *ngIf="spinner"></app-spinner>

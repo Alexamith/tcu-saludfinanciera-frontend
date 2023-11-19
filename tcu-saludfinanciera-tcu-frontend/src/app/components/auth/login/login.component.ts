@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ILogin } from '../../../interfaces/user.interface';
@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   loginPayload:ILogin;
   errorMessage:boolean = false;
   message:string ="";
+  spinner:boolean = false;
   constructor(private authService:AuthService,private tokenService:TokenService, private fb:FormBuilder,
     private router:Router) { 
     this.createloginForm();
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.spinner = true;
     this.loginPayload = this.loginForm.value;
     this.authService.login(this.loginPayload).subscribe((res:any) => {
       this.message = res!.msg;
@@ -52,6 +54,7 @@ export class LoginComponent implements OnInit {
       this.tokenService.saveUserLocalStorage(res.data);
       this.errorMessage = false;
       this.router.navigateByUrl('/');
+      this.spinner = false;
     },
     error => {
       this.message = error.error.msg;

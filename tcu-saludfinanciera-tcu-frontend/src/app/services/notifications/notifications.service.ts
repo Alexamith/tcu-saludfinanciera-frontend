@@ -17,4 +17,15 @@ export class NotificationsService {
       confirmButtonText:'Salir'
     });
   }
+
+  created(text:string = "Se creó correctamente"){
+    return Swal.fire({
+      title: "Exitoso",
+      text: text,
+      icon: "success",
+      confirmButtonColor:'#2A4B9E',
+      confirmButtonText:'Aceptar'
+    });
+  }
+
 }

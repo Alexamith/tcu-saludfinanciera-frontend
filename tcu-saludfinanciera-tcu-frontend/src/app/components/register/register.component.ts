@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IRegister } from 'src/app/interfaces/user.interface';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/auth/token.service';
 
 
 @Component({
@@ -14,9 +15,11 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   registerPayload: IRegister;
   message: string = '';
+  spinner:boolean = false;
 
   constructor(private authService: AuthService, private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private tokenService:TokenService) {
     this.createregisterForm();
   }
   successMessage: boolean = false;
@@ -29,13 +32,12 @@ export class RegisterComponent implements OnInit {
 
   createregisterForm() {
     this.registerForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern(/[a-zA-Z ]*/)]],
-      firstLastName: ['', [Validators.required, Validators.pattern(/[a-zA-Z ]*/)]],
-      secondLastName: ['', [Validators.required, Validators.pattern(/[a-zA-Z ]*/)]],
+      name: ['Yordy', [Validators.required, Validators.pattern(/[a-zA-Z ]*/)]],
+      firstLastName: ['Araya', [Validators.required, Validators.pattern(/[a-zA-Z ]*/)]],
+      secondLastName: ['Araya', [Validators.required, Validators.pattern(/[a-zA-Z ]*/)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-      companyId: ['1'],
-      administrator: ['1']
+      password: ['1234', [Validators.required]],
+      administrator: [false]
 
     });
   }
@@ -46,6 +48,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.spinner = true;
     if (this.registerForm.valid) {
 
       this.registerPayload = this.registerForm.value;
@@ -56,15 +59,16 @@ export class RegisterComponent implements OnInit {
           return;
         }
 
-        this.successMessage = true;
+        this.tokenService.saveUserLocalStorage(res.data);
         this.errorMessage = false;
-
-
+        this.router.navigateByUrl('/');
+        
       },
-        error => {
-          this.message = error.error.msg;
-          this.errorMessage = true;
-        });
+      error => {
+        this.message = error.error.msg;
+        this.errorMessage = true;
+      });
+      this.spinner = false;
 
     } else {
       this.nameInvalid = this.registerForm.get('name')?.invalid ?? false;
