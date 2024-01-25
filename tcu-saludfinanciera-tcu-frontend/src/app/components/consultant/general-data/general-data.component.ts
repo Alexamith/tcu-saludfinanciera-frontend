@@ -53,13 +53,8 @@ disabledAllInputs(){
 //  });
 }
 
-
-
-
   createConsultant(){
-    
-    
-    
+        
     this.spinner = true;
     this.consultantService.createConsultant(this.registerForm.value).subscribe((res:any) => {
       this.message = res!.msg;
@@ -77,6 +72,4 @@ disabledAllInputs(){
       this.errorMessage = true;
     });
   }
-
-
 }
