@@ -1,1 +1,28 @@
-<p>consultant-index works!</p>
+<form [formGroup]="consultantDataForm" (ngSubmit)="submitForm()">
+    <div class="section-container">
+      <h2>Ingresos Netos</h2>
+  
+      <div class="flex-container">
+        <!-- Detalles de Ingresos Netos -->
+        <div formGroupName="ingresosNetos">
+          <label>Salario Neto</label>
+          <input type="number" formControlName="salarioNeto" required>
+  
+          <label>Otros Ingresos</label>
+          <input type="number" formControlName="otrosIngresos" required>
+  
+          <label>Arrendamiento de Carros</label>
+          <input type="number" formControlName="arrendamientoCarros" required>
+  
+          <label>Viáticos</label>
+          <input type="number" formControlName="viaticos" required>
+  
+          <label>Total Ingresos</label>
+          <input type="number" [value]="consultantDataForm.get('ingresosNetos.totalIngresos')?.value" readonly>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit">Enviar</button>
+  </form>
+  

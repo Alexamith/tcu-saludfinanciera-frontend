@@ -1,0 +1,9 @@
+.section-container {
+    margin-bottom: 20px; /* Espacio entre secciones */
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre elementos hijos */
+  }

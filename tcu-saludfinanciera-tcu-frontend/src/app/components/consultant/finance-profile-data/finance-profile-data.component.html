@@ -1,1 +1,46 @@
-<p>finance-profile-data works!</p>
+<!-- finance-profile-data.component.html -->
+<form [formGroup]="financeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="perfilRiesgo">Perfil de riesgo</label>
+      <input type="text" class="form-control" id="perfilRiesgo" formControlName="perfilRiesgo">
+      <div *ngIf="financeForm?.get('perfilRiesgo')?.touched && financeForm?.get('perfilRiesgo')?.hasError('required')" class="text-danger">
+        Perfil de riesgo es requerido.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="objetivosCortoPlazo">Objetivos financieros a corto plazo</label>
+      <input type="text" class="form-control" id="objetivosCortoPlazo" formControlName="objetivosCortoPlazo">
+      <div *ngIf="financeForm?.get('objetivosCortoPlazo')?.touched && financeForm?.get('objetivosCortoPlazo')?.hasError('required')" class="text-danger">
+        Objetivos financieros a corto plazo son requeridos.
+      </div>
+    </div>
+  
+    <div class="form-group">
+        <label for="objetivosMedianoPlazo">Objetivos financieros a mediano plazo</label>
+        <input type="text" class="form-control" id="objetivosMedianoPlazo" formControlName="objetivosMedianoPlazo">
+        <div *ngIf="financeForm?.get('objetivosMedianoPlazo')?.touched && financeForm?.get('objetivosMedianoPlazo')?.hasError('required')" class="text-danger">
+          Objetivos financieros a mediano plazo son requeridos.
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="objetivosLargoPlazo">Objetivos financieros a largo plazo</label>
+        <input type="text" class="form-control" id="objetivosLargoPlazo" formControlName="objetivosLargoPlazo">
+        <div *ngIf="financeForm?.get('objetivosLargoPlazo')?.touched && financeForm?.get('objetivosLargoPlazo')?.hasError('required')" class="text-danger">
+          Objetivos financieros a largo plazo son requeridos.
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="diagnosticoBienestar">Diagnóstico cualitativo de Bienestar financiero</label>
+        <input type="text" class="form-control" id="diagnosticoBienestar" formControlName="diagnosticoBienestar">
+        <div *ngIf="financeForm?.get('diagnosticoBienestar')?.touched && financeForm?.get('diagnosticoBienestar')?.hasError('required')" class="text-danger">
+          Diagnóstico cualitativo de Bienestar financiero es requerido.
+        </div>
+      </div>
+    
+      <br>
+      
+      <button type="submit" class="btn btn-primary">Finalizar</button>
+    </form>

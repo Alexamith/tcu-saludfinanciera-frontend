@@ -1,1 +1,51 @@
-<p>location-data works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="provincia">Provincia</label>
+      <input type="text" class="form-control" id="provincia" formControlName="provincia">
+      <div *ngIf="registerForm.get('provincia')?.touched && registerForm.get('provincia')?.hasError('required')" class="text-danger">
+        Provincia es requerida.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="canton">Cantón</label>
+      <input type="text" class="form-control" id="canton" formControlName="canton">
+      <div *ngIf="registerForm.get('canton')?.touched && registerForm.get('canton')?.hasError('required')" class="text-danger">
+        Cantón es requerido.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="distrito">Distrito</label>
+      <input type="text" class="form-control" id="distrito" formControlName="distrito">
+      <div *ngIf="registerForm.get('distrito')?.touched && registerForm.get('distrito')?.hasError('required')" class="text-danger">
+        Distrito es requerido.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="telefono">Número de Teléfono</label>
+      <input type="tel" class="form-control" id="telefono" formControlName="telefono">
+      <div *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.hasError('required')" class="text-danger">
+        Teléfono es requerido.
+      </div>
+      <div *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.hasError('pattern')" class="text-danger">
+        Teléfono debe tener 8 dígitos.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="correoElectronico">Correo Electrónico</label>
+      <input type="email" class="form-control" id="correoElectronico" formControlName="correoElectronico">
+      <div *ngIf="registerForm.get('correoElectronico')?.touched && registerForm.get('correoElectronico')?.hasError('required')" class="text-danger">
+        Correo Electrónico es requerido.
+      </div>
+      <div *ngIf="registerForm.get('correoElectronico')?.touched && registerForm.get('correoElectronico')?.hasError('email')" class="text-danger">
+        Ingresa un correo electrónico válido.
+      </div>
+    </div>
+    <br>
+  
+    <button type="submit" class="btn btn-primary">Guardar y Continuar</button>
+  </form>
+  

@@ -1,71 +1,71 @@
+<section class="register-sect">
+  <div class="container py-5 h-50">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-12 col-lg-12 d-flex align-items-center ">
+              <div class="card-body p-4 p-lg-5 text-black ">
+                <div class="container">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                        data-bs-target="#generales-tab-pane" type="button" role="tab" aria-controls="generales-tab-pane"
+                        aria-selected="true">
+                        Paso 1 <i class="bi bi-file-person"></i>
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="ubicacion-tab" data-bs-toggle="tab"
+                        data-bs-target="#ubicacion-tab-pane" type="button" role="tab" aria-controls="ubicacion-tab-pane"
+                        aria-selected="false">
+                        Paso 2
+                        <i class="bi bi-geo-fill"></i>
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="familiares-tab" data-bs-toggle="tab"
+                        data-bs-target="#familiares-tab-pane" type="button" role="tab"
+                        aria-controls="familiares-tab-pane" aria-selected="false">
+                        Paso 3
+                        <i class="bi bi-people-fill"></i>
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil-tab-pane"
+                        type="button" role="tab" aria-controls="perfil-tab-pane" aria-selected="false">
+                        Paso 4
+                        <i class="bi bi-cash-coin"></i>
+                      </button>
+                    </li>
+                  </ul>
 
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="generales-tab-pane" role="tabpanel"
+                      aria-labelledby="home-tab" tabindex="0">
+                      <app-general-data></app-general-data>
+                    </div>
+                    <div class="tab-pane fade" id="ubicacion-tab-pane" role="tabpanel" aria-labelledby="ubicacion-tab"
+                      tabindex="0">
+                      <app-location-data></app-location-data>
+                    </div>
+                    <div class="tab-pane fade" id="familiares-tab-pane" role="tabpanel" aria-labelledby="familiares-tab"
+                      tabindex="0">
+                      <app-family-data></app-family-data>
 
-    <section class="register-sect">
-        <div class="container py-5 h-50">
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col col-xl-10">
-              <div class="card" style="border-radius: 1rem;">
-                <div class="row g-0 ">
-                  <div class="col-md-12 col-lg-12 d-flex align-items-center ">
-                    <div class="card-body p-4 p-lg-5 text-black ">
+                    </div>
+                    <div class="tab-pane fade" id="perfil-tab-pane" role="tabpanel" aria-labelledby="perfil-tab"
+                      tabindex="0">
+                      <app-finance-profile-data></app-finance-profile-data>
 
-
-                      <div class="container">
-
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#generales-tab-pane" type="button" role="tab" aria-controls="generales-tab-pane" aria-selected="true">
-                              Paso 1 <i class="bi bi-file-person"></i>
-                            </button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="ubicacion-tab" data-bs-toggle="tab" data-bs-target="#ubicacion-tab-pane" type="button" role="tab" aria-controls="ubicacion-tab-pane" aria-selected="false">
-                              Paso 2
-                              <i class="bi bi-geo-fill"></i>
-                            </button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="familiares-tab" data-bs-toggle="tab" data-bs-target="#familiares-tab-pane" type="button" role="tab" aria-controls="familiares-tab-pane" aria-selected="false">
-                              Paso 3
-                              <i class="bi bi-people-fill"></i>
-                            </button>
-                          </li>
-                          <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil-tab-pane" type="button" role="tab" aria-controls="perfil-tab-pane" aria-selected="false">
-                              Paso 4
-                              <i class="bi bi-cash-coin"></i>
-                            </button>
-                          </li>
-                        </ul>
-                      
-                        <div class="tab-content" id="myTabContent">
-                          <div class="tab-pane fade show active" id="generales-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                            <app-general-data></app-general-data>
-                          </div>
-                          <div class="tab-pane fade" id="ubicacion-tab-pane" role="tabpanel" aria-labelledby="ubicacion-tab" tabindex="0">
-                            <app-location-data ></app-location-data>
-                          </div>
-                          <div class="tab-pane fade" id="familiares-tab-pane" role="tabpanel" aria-labelledby="familiares-tab" tabindex="0">
-                            <app-family-data ></app-family-data>
-                      
-                          </div>
-                          <div class="tab-pane fade" id="perfil-tab-pane" role="tabpanel" aria-labelledby="perfil-tab" tabindex="0">
-                            <app-finance-profile-data ></app-finance-profile-data>
-                      
-                          </div>
-                        </div>
-                        </div>
-                          
-
-                     
                     </div>
                   </div>
-                 
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- <app-spinner *ngIf="spinner"></app-spinner> -->
-      
+      </div>
+    </div>
+  </div>
+</section>

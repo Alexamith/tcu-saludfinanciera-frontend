@@ -1,1 +1,71 @@
-<p>family-data works!</p>
+<form [formGroup]="familyForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="cantidadPersonas">Cantidad de personas en la familia</label>
+      <input type="number" class="form-control" id="cantidadPersonas" formControlName="cantidadPersonas">
+      <div *ngIf="familyForm.get('cantidadPersonas')?.touched && familyForm.get('cantidadPersonas')?.hasError('required')" class="text-danger">
+        Cantidad de personas es requerida.
+      </div>
+    </div>
+  
+    <!-- Otros campos de formulario similares para ingreso bruto, ingreso neto, etc. -->
+  
+    <div class="form-group">
+        <label for="ingresoBrutoMensual">Ingreso Bruto Mensual</label>
+        <input type="text" class="form-control" id="ingresoBrutoMensual" formControlName="ingresoBrutoMensual">
+        <div *ngIf="familyForm.get('ingresoBrutoMensual')?.touched && familyForm.get('ingresoBrutoMensual')?.hasError('required')" class="text-danger">
+          Ingreso Bruto Mensual es requerido.
+        </div>
+      </div>
+
+ <div class="form-group">
+    <label for="ingresoNetoMensual">Ingreso Neto Mensual</label>
+    <input type="text" class="form-control" id="ingresoNetoMensual" formControlName="ingresoNetoMensual">
+    <div *ngIf="familyForm.get('ingresoNetoMensual')?.touched && familyForm.get('ingresoNetoMensual')?.hasError('required')" class="text-danger">
+      Ingreso Neto Mensual es requerido.
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="ingresosAdicionales">Ingresos Adicionales</label>
+    <input type="text" class="form-control" id="ingresosAdicionales" formControlName="ingresosAdicionales">
+    <!-- No incluyo validación para este campo en este ejemplo, puedes agregarla según tus necesidades -->
+  </div>
+
+    <div class="form-group">
+      <label for="dependenciaEconomica">Posee personas con dependencia económica?</label>
+      <select class="form-control" id="dependenciaEconomica" formControlName="dependenciaEconomica">
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+  
+
+    <!-- Otros campos de formulario similares para discapacidad, enfermedad crónica, etc. -->
+
+    <div class="form-group">
+        <label for="discapacidad">¿Se presenta discapacidad?</label>
+        <select class="form-control" id="discapacidad" formControlName="discapacidad">
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+ <div class="form-group">
+    <label for="enfermedadCronica">¿Se presenta enfermedad crónica?</label>
+    <select class="form-control" id="enfermedadCronica" formControlName="enfermedadCronica">
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="enfermedadTerminal">¿Se presenta enfermedad terminal?</label>
+    <select class="form-control" id="enfermedadTerminal" formControlName="enfermedadTerminal">
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+  </div>
+  <br>
+    <button type="submit" class="btn btn-primary">Guardar y Continuar</button>
+  </form>
+  
